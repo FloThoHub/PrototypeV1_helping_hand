@@ -30,7 +30,7 @@ public class ExampleNotificationOpenedHandler implements OneSignal.NotificationO
     @Override
     public void notificationOpened(OSNotificationOpenResult result) {
 
-               // notificationText = result.notification.payload.body;
+                notificationText = result.notification.payload.body;
 
                 Intent intent = new Intent(mContext, pushclickActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT | Intent.FLAG_ACTIVITY_NEW_TASK);

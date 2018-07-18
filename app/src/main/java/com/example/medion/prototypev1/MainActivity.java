@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     static public EditText etName, etEmail, etPassword;
     private Button signinButton, signupButton;
-   // FirebaseUser user;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
     //Set UserDisplay Name
     private void userProfile()
     {
+
         FirebaseUser user = mAuth.getCurrentUser();
         if(user!= null)
         {

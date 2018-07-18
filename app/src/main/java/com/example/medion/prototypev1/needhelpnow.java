@@ -1,5 +1,6 @@
 package com.example.medion.prototypev1;
 
+import android.app.Application;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -22,6 +23,7 @@ import android.os.PersistableBundle;
 import android.os.StrictMode;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -47,6 +49,9 @@ public class needhelpnow extends AppCompatActivity {
     public double Longitude;
     public Boolean NotificationSent = false;
     Button gobackButton;
+
+   // TelephonyManager tMgr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+    //String mPhoneNumber = tMgr.getLine1Number();
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -186,10 +191,19 @@ public class needhelpnow extends AppCompatActivity {
                                 +   "\"app_id\": \"b61cbfc4-1b93-4edf-abdc-12e2c0609acf\","
                                 +   "\"included_segments\": [\"All\"],"
                                 +   "\"data\": {\"foo\": \"bar\"},"
-                                +   "\"contents\": {\"en\": \"I NEED HELP NOW\nMy Location:"
+                                +   "\"contents\": {\"en\": \"I NEED HELP NOW\n"
+                                +   "Name<"
+                                +   "user"
+                                +   "> "
+                                +   "\n"
+                                +   "My Location:"
+                                +   "\n"
+                                +   "Longitude<"
                                 +   Longitude
-                                +   " "
+                                +   "> "
+                                +   "Latitude<"
                                 +   Latitude
+                                +   "> "
                                 +   "\"}"
                                 +   "}";
 
