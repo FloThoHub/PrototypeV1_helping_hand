@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="109dp"
+        android:layout_marginLeft="109dp"
+        android:layout_marginRight="109dp"
+        android:layout_marginStart="109dp"
+        android:layout_marginTop="35dp"
+        android:text="@string/welcome_to_a_better_world"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/signoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="33dp"
+        android:layout_marginEnd="149dp"
+        android:layout_marginLeft="147dp"
+        android:layout_marginRight="149dp"
+        android:layout_marginStart="147dp"
+        android:text="@string/sign_out"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/needhelpButton"
+        android:layout_width="358dp"
+        android:layout_height="138dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="24dp"
+        android:text="NEED HELP NOW"
+        app:layout_constraintBottom_toTopOf="@+id/laterhelpButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+    <Button
+        android:id="@+id/laterhelpButton"
+        android:layout_width="354dp"
+        android:layout_height="137dp"
+        android:layout_marginBottom="62dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="14dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:text="NEED HELP LATER"
+        app:layout_constraintBottom_toTopOf="@+id/signoutButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/needhelpButton" />
+
+</android.support.constraint.ConstraintLayout>

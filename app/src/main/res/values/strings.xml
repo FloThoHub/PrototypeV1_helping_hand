@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PrototypeV1</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="welcome_to_a_better_world">Welcome to a better world</string>
+</resources>
