@@ -33,12 +33,10 @@
         android:layout_marginLeft="148dp"
         android:layout_marginRight="148dp"
         android:layout_marginStart="148dp"
-        android:layout_marginTop="7dp"
         android:text="back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/callButton" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/locateButton"
@@ -59,16 +57,25 @@
         android:id="@+id/callButton"
         android:layout_width="360dp"
         android:layout_height="100dp"
-        android:layout_marginBottom="18dp"
         android:layout_marginEnd="12dp"
         android:layout_marginLeft="12dp"
         android:layout_marginRight="12dp"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="19dp"
         android:text="GIVE ME A CALL"
-        app:layout_constraintBottom_toTopOf="@+id/gobackButton"
+        app:layout_constraintBottom_toTopOf="@+id/sendSMSButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/locateButton" />
+
+    <Button
+        android:id="@+id/sendSMSButton"
+        android:layout_width="360dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="31dp"
+        android:text="send me a SMS"
+        app:layout_constraintBottom_toTopOf="@+id/gobackButton"
+        app:layout_constraintTop_toBottomOf="@+id/callButton"
+        tools:layout_editor_absoluteX="12dp" />
+
 </android.support.constraint.ConstraintLayout>
