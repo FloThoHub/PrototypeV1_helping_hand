@@ -12,6 +12,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.onesignal.OneSignal;
+
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Locale;
@@ -39,7 +41,6 @@ public class pushclickActivity extends AppCompatActivity {
         notificationLongitude = getLongitude(ExampleNotificationOpenedHandler.notificationText);
         notificationName = getName(ExampleNotificationOpenedHandler.notificationText);
         notificationPhone = getPhone(ExampleNotificationOpenedHandler.notificationText);
-
 
 
         tvNotification.setText("Hi, my name is " +notificationName+ ".\nI could use your help.\n");

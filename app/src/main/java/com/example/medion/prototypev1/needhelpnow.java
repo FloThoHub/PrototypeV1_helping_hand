@@ -68,6 +68,7 @@ public class needhelpnow extends AppCompatActivity {
         gobackButton = (Button) findViewById(R.id.gobackButton);
 
         // OneSignal Initialization
+
         OneSignal.startInit(this)
                 .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
                 .unsubscribeWhenNotificationsAreDisabled(true)
