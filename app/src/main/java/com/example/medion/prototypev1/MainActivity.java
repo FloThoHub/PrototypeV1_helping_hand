@@ -22,8 +22,9 @@ import com.onesignal.OneSignal;
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    static public EditText etName, etEmail, etPassword;
+    static public EditText etName, etEmail, etPassword, etPhone;
     private Button signinButton, signupButton;
+    static public String Phonenumber;
 
 
 
@@ -41,11 +42,13 @@ public class MainActivity extends AppCompatActivity {
 */
         mAuth = FirebaseAuth.getInstance();
 
+
         signinButton = (Button) findViewById(R.id.signinButton);
         signupButton = (Button) findViewById(R.id.signupButton);
         etName = (EditText) findViewById(R.id.etName);
         etEmail = (EditText) findViewById(R.id.etEmail);
         etPassword = (EditText) findViewById(R.id.etPassword);
+        etPhone = (EditText) findViewById(R.id.etPhone);
 
         if (mAuth.getCurrentUser() != null) {
 
@@ -63,19 +66,24 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                String getphone = etPhone.getText().toString().trim();
                 String getemail = etEmail.getText().toString().trim();
                 String getpassword = etPassword.getText().toString().trim();
                 callsignin(getemail, getpassword);
 
+                Phonenumber = getphone;
             }
         });
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                String getphone = etPhone.getText().toString().trim();
                 String getemail = etEmail.getText().toString().trim();
                 String getpassword = etPassword.getText().toString().trim();
                 callsignup(getemail, getpassword);
+
+                Phonenumber = getphone;
             }
 
         });
@@ -115,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
                     .setDisplayName(etName.getText().toString().trim())
 //.setPhotoUri(Uri.parse("https://example.com/jane-q-user/profile.jpg")) // here you can set image link also.
                     .build();
+
 
             user.updateProfile(profileUpdates)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {

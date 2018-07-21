@@ -57,7 +57,9 @@ public class SignIn extends AppCompatActivity {
 
         //user = mAuth.getCurrentUser();
         LoggedIn_User_Email = user.getEmail();
-        OneSignal.sendTag("User_ID", LoggedIn_User_Email);
+
+        //OneSignal.sendTag("User_ID", LoggedIn_User_Email);
+        OneSignal.sendTag("User_ID", MainActivity.Phonenumber);
 
 
         if (user != null) {

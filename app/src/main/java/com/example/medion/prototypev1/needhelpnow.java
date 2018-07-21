@@ -31,7 +31,9 @@ import android.Manifest;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.onesignal.OSPermissionSubscriptionState;
 import com.onesignal.OneSignal;
+import com.onesignal.OneSignalDbHelper;
 
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
@@ -41,6 +43,7 @@ import java.util.Scanner;
 public class needhelpnow extends AppCompatActivity {
 
     FirebaseUser user;
+    static public String Username;
     String LoggedIn_User_Email;
     private FirebaseAuth mAuth;
     private LocationManager locationManager;
@@ -60,7 +63,8 @@ public class needhelpnow extends AppCompatActivity {
         setContentView(R.layout.activity_needhelpnow);
 
         mAuth = FirebaseAuth.getInstance();
-
+        user = mAuth.getCurrentUser();
+        Username = user.getDisplayName();
         gobackButton = (Button) findViewById(R.id.gobackButton);
 
         // OneSignal Initialization
@@ -172,6 +176,8 @@ public class needhelpnow extends AppCompatActivity {
                             .permitAll().build();
                     StrictMode.setThreadPolicy(policy);
                     String send_email;
+                    OSPermissionSubscriptionState status = OneSignal.getPermissionSubscriptionState();
+
 
 
                     try {
@@ -193,11 +199,11 @@ public class needhelpnow extends AppCompatActivity {
                                 +   "\"data\": {\"foo\": \"bar\"},"
                                 +   "\"contents\": {\"en\": \"I NEED HELP NOW\n"
                                 +   "Name<"
-                                +   "user"
+                                +   user.getDisplayName()
                                 +   "> "
                                 +   "\n"
                                 +   "Phone<"
-                                +   "06643834240"
+                                +   MainActivity.Phonenumber
                                 +   "> "
                                 +   "\n"
                                 +   "My Location:"
